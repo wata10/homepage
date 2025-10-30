@@ -253,6 +253,52 @@
         <!-- カテゴリセクションはJavaScriptで動的に生成される -->
     </div>
 
+    <!-- 新しいサイトを追加するフォーム -->
+    <div id="add-form">
+        <h3>新しいサイトを追加</h3>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="category-select">カテゴリ:</label>
+                <select id="category-select">
+                    <option value="">選択</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="site-name">サイト名:</label>
+                <input type="text" id="site-name" placeholder="例: GitHub">
+            </div>
+            <div class="form-group">
+                <label for="site-url">URL:</label>
+                <input type="url" id="site-url" placeholder="https://example.com">
+            </div>
+            <div class="form-group">
+                <button onclick="addSite()">追加</button>
+            </div>
+        </div>
+        
+        <!-- 新しいカテゴリを追加するフォーム -->
+        <div class="new-category-form">
+            <h4>新しいカテゴリを追加</h4>
+            <div class="new-category-row">
+                <div class="form-group">
+                    <label for="new-category-name">カテゴリ名:</label>
+                    <input type="text" id="new-category-name" placeholder="例: 新しいカテゴリ">
+                </div>
+                <div class="form-group">
+                    <button onclick="addCategory()">カテゴリ追加</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- データのエクスポート・インポート -->
+        <div class="export-import">
+            <h4>データの管理</h4>
+            <button onclick="exportData()">データをエクスポート</button>
+            <button onclick="document.getElementById('import-file').click()">データをインポート</button>
+            <button onclick="resetData()" style="background-color: #dc3545;">データをリセット</button>
+            <input type="file" id="import-file" accept=".json" style="display: none;" onchange="importData(event)">
+        </div>
+    </div>
     <div class="container" id="linksContainer">
             </div>
 
