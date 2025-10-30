@@ -129,6 +129,18 @@
     {
       "name": "Angewandte Chemie International Edition",
       "url": "https://onlinelibrary.wiley.com/journal/15213773"
+    },
+    {
+      "name": "Feedly",
+      "url": "https://feedly.com/i/collection/content/user/04ae61f3-46ce-4241-998d-983a6f30bed9/category/a9cbc61c-667b-461c-b202-cd54ec8f7b58"
+    },
+    {
+      "name": "東京化成",
+      "url": "https://www.tcichemicals.com/JP/ja/"
+    },
+    {
+      "name": "UTokyo試薬",
+      "url": "https://u-tokyo.siyaku.com/"
     }
   ],
   "チコちゃん": [
@@ -188,7 +200,7 @@
     },
     {
       "name": "大学入試過去問DB",
-      "url": "https://www.toshin-kakomon.com/kakomon_db/ex/menu/index.html"
+      "url": "https://www.toshin-kakomon.com/new_kakomon_db/"
     }
   ],
   "ブログ": [
@@ -377,6 +389,10 @@
     {
       "name": "SBI証券",
       "url": "https://site.sbisec.co.jp/account/nisa"
+    },
+    {
+      "name": "投資の森",
+      "url": "https://nikkeiyosoku.com/"
     }
   ]
 }
