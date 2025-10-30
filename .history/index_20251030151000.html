@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>よく使うリンク集</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Zen Kurenaido", sans-serif;
+            font-size: 16pt;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .category-section {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            min-height: 200px;
+        }
+        
+        .category-header {
+            padding: 15px;
+            font-weight: bold;
+            color: #333;
+            font-size: 18px;
+            text-align: center;
+        }
+        
+        .category-content {
+            padding: 10px;
+        }
+        
+        .link-item {
+            display: block;
+            padding: 10px 15px;
+            margin: 5px 0;
+            text-decoration: none;
+            color: #333;
+            border-radius: 6px;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+        
+        .link-item:hover {
+            text-decoration: underline;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        /* カテゴリ別の色設定 */
+        .category-チコちゃん .category-header {
+            background-color: goldenrod;
+        }
+        .category-チコちゃん .link-item {
+            background-color: gold;
+        }
+        
+        .category-CAST .category-header {
+            background-color: forestgreen;
+        }
+        .category-CAST .link-item {
+            background-color: lightgreen;
+        }
+        
+        .category-東京大学 .category-header {
+            background-color: deepskyblue;
+        }
+        .category-東京大学 .link-item {
+            background-color: lightskyblue;
+        }
+        
+        .category-便利なサイト .category-header, .category-画像編集 .category-header {
+            background-color: dodgerblue;
+        }
+        .category-便利なサイト .link-item, .category-画像編集 .link-item {
+            background-color: lightblue;
+        }
+        
+        .category-AI .category-header, .category-論文系AI .category-header {
+            background-color: lightcoral;
+        }
+        .category-AI .link-item, .category-論文系AI .link-item {
+            background-color: mistyrose;
+        }
+        
+        .category-ECCS .category-header {
+            background-color: lightsalmon;
+        }
+        .category-ECCS .link-item {
+            background-color: peachpuff;
+        }
+        
+        .category-天馬行空 .category-header {
+            background-color: aqua;
+        }
+        .category-天馬行空 .link-item {
+            background-color: paleturquoise;
+        }
+        
+        .category-ブログ .category-header {
+            background-color: hotpink;
+        }
+        .category-ブログ .link-item {
+            background-color: lightpink;
+        }
+        
+        .category-アイコン素材 .category-header, .category-イラスト素材 .category-header, 
+        .category-写真素材 .category-header, .category-その他素材 .category-header {
+            background-color: khaki;
+        }
+        .category-アイコン素材 .link-item, .category-イラスト素材 .link-item, 
+        .category-写真素材 .link-item, .category-その他素材 .link-item {
+            background-color: lemonchiffon;
+        }
+        
+        .category-家庭教師 .category-header {
+            background-color: lightseagreen;
+        }
+        .category-家庭教師 .link-item {
+            background-color: aquamarine;
+        }
+        
+        .category-襖クラブ .category-header {
+            background-color: burlywood;
+        }
+        .category-襖クラブ .link-item {
+            background-color: blanchedalmond;
+        }
+        
+        .category-みかん愛好会 .category-header {
+            background-color: darkorange;
+        }
+        .category-みかん愛好会 .link-item {
+            background-color: khaki;
+        }
+
+        .category-資産運用 .category-header {
+            background-color: cornflowerblue;
+        }
+        .category-資産運用 .link-item {
+            background-color: lightskyblue;
+        }
+        
+        #add-form {
+            background-color: white;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 2fr 2fr 1fr;
+            gap: 10px;
+            align-items: end;
+        }
+        
+        .form-row .form-group {
+            margin-bottom: 0;
+        }
+        
+        .new-category-form {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .new-category-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 10px;
+            align-items: end;
+        }
+        
+        .export-import {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 6px;
+        }
+        
+        .export-import button {
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        
+        #import-file {
+            margin-top: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            .new-category-row {
+                grid-template-columns: 1fr;
+            }
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>よく使うリンク集</h1>
+    
+    <div class="container" id="linksContainer">
+        <!-- カテゴリセクションはJavaScriptで動的に生成される -->
+    </div>
+
+    <!-- 新しいサイトを追加するフォーム -->
+    <div id="add-form">
+        <h3>新しいサイトを追加</h3>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="category-select">カテゴリ:</label>
+                <select id="category-select">
+                    <option value="">選択</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="site-name">サイト名:</label>
+                <input type="text" id="site-name" placeholder="例: GitHub">
+            </div>
+            <div class="form-group">
+                <label for="site-url">URL:</label>
+                <input type="url" id="site-url" placeholder="https://example.com">
+            </div>
+            <div class="form-group">
+                <button onclick="addSite()">追加</button>
+            </div>
+        </div>
+        
+        <!-- 新しいカテゴリを追加するフォーム -->
+        <div class="new-category-form">
+            <h4>新しいカテゴリを追加</h4>
+            <div class="new-category-row">
+                <div class="form-group">
+                    <label for="new-category-name">カテゴリ名:</label>
+                    <input type="text" id="new-category-name" placeholder="例: 新しいカテゴリ">
+                </div>
+                <div class="form-group">
+                    <button onclick="addCategory()">カテゴリ追加</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- データのエクスポート・インポート -->
+        <div class="export-import">
+            <h4>データの管理</h4>
+            <button onclick="exportData()">データをエクスポート</button>
+            <button onclick="document.getElementById('import-file').click()">データをインポート</button>
+            <button onclick="resetData()" style="background-color: #dc3545;">データをリセット</button>
+            <input type="file" id="import-file" accept=".json" style="display: none;" onchange="importData(event)">
+        </div>
+    </div>
+
+    <script>
+        // デフォルトのサイトデータ
+        const defaultSiteData = {
+            "ECCS": [
+                { name: "Googleドライブ", url: "https://drive.google.com/drive/u/1/home" },
+                { name: "Gmail", url: "https://mail.google.com/mail/u/1/#inbox" }
+            ],
+            "CAST": [
+                { name: "CTAS", url: "https://ctas.utcast-mate.com/" },
+                { name: "CAST wiki", url: "https://wiki.utcast-mate.com/index.php?title=%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%9A%E3%83%BC%E3%82%B8" },
+                { name: "依頼検討ページ", url: "https://ctas.utcast-mate.com/pending_event" },
+                { name: "実験DB", url: "https://ctas.utcast-mate.com/exp" },
+                { name: "活動報告", url: "https://ctas.utcast-mate.com/report" },
+                { name: "OneDrive", url: "https://utcast-my.sharepoint.com/" },
+                { name: "Gmail", url: "https://mail.google.com/mail/u/2/#inbox" },
+                { name: "Googleドライブ", url: "https://drive.google.com/drive/u/2/home" }
+            ],
+            "みかん愛好会": [
+                { name: "Googleドライブ", url: "https://drive.google.com/drive/u/5/folders/1IH1NSMtMA9mA_v0IXEsbcRIwE43wTtWb" },
+                { name: "Gmail", url: "https://mail.google.com/mail/u/5/#inbox" },
+                { name: "会計簿", url: "https://docs.google.com/spreadsheets/d/1JULDJxsjuKiuFMAKCFLbMBYcnnk-1vQk9kcTeL9cyk0/edit?usp=sharing" },
+                { name: "PayPay管理", url: "https://docs.google.com/spreadsheets/d/1yzE2ZC2TT1NqnTFCqcttKtv5XIr-xntBz3bNToUezsE/edit?usp=sharing" },
+                { name: "会計フォルダ", url: "https://drive.google.com/drive/folders/1P3GX_E7aRgzIEabUhH9cHXgvMQM6joQV?usp=drive_link" },
+                { name: "会計報告書提出先フォルダ", url: "https://drive.google.com/drive/folders/1705Gwz_2vv2Rw4l82ckj2n77R3-Ap12e?usp=sharing" },
+                { name: "確認中の会計報告書", url: "https://drive.google.com/drive/folders/1LEu5UYjTl5ysOXvFUYjB0oqfOkMsCjbd?usp=drive_link" },
+                { name: "個人返金表", url: "https://docs.google.com/spreadsheets/d/1ambZy8_k7eenTetapx1Ytj_HJWolwSFCvepNpb-9bBE/edit?usp=sharing" },
+                { name: "合宿フォルダ", url: "https://drive.google.com/drive/folders/10oKBCWgt3iXFGfgY0-w9V6cStxCqglDi?usp=drive_link" }
+            ],
+            "東京大学": [
+                { name: "UTOL", url: "https://utol.ecc.u-tokyo.ac.jp/login" },
+                { name: "UTAS", url: "https://utas.adm.u-tokyo.ac.jp/campusweb/campusportal.do?page=main" },
+                { name: "化学生命工学科", url: "https://www.chembio.t.u-tokyo.ac.jp/" },
+                { name: "化生系ポータルサイト", url: "http://www.chem.t.u-tokyo.ac.jp/" },
+                { name: "OneDrive", url: "https://www.office.com/onedrive/?acctsw=1" }
+            ],
+            "チコちゃん": [
+                { name: "Googleドライブ", url: "https://drive.google.com/drive/u/0/home" },
+                { name: "Gmail", url: "https://mail.google.com/mail/u/0/#inbox" },
+                { name: "家計簿", url: "https://docs.google.com/spreadsheets/d/1pK_zmEGz3_kQuMb1zBLGNSAxMEApgCBPYEq4_mg2P-g/edit?usp=sharing" },
+                { name: "Googleカレンダー", url: "https://calendar.google.com/calendar/u/0/r?pli=1" }
+            ],
+            "天馬行空": [
+                { name: "Googleドライブ", url: "https://drive.google.com/drive/u/3/home" },
+                { name: "Gmail", url: "https://mail.google.com/mail/u/3/#inbox" }
+            ],
+            "襖クラブ": [
+                { name: "ウェブシステム", url: "https://ut-orientation.net/25/system/profile" },
+                { name: "OC", url: "https://ut-orientation.net/visitor/circle/2025%E5%B9%B4%E5%BA%A6%E3%82%B5%E3%83%BC%E3%82%AF%E3%83%AB%E6%96%B0%E6%AD%93%E3%81%B8%E3%81%AE%E5%8F%82%E5%8A%A0%E3%82%92%E5%B8%8C%E6%9C%9B%E3%81%95%E3%82%8C%E3%82%8B%E5%9B%A3%E4%BD%93%E5%90%91%E3%81%91%E3%81%AE%E3%81%94%E6%A1%88%E5%86%85" },
+                { name: "Googleドライブ", url: "https://drive.google.com/drive/u/4/my-drive" },
+                { name: "Gmail", url: "https://mail.google.com/mail/u/4/#inbox" }
+            ],
+            "家庭教師": [
+                { name: "スマートレーダー", url: "https://app.smartrador.com/teacher/home" },
+                { name: "中学入試過去問DB", url: "https://www.yotsuyaotsuka.com/chugaku_kakomon/system" },
+                { name: "大学入試過去問DB", url: "https://www.toshin-kakomon.com/kakomon_db/ex/menu/index.html" }
+            ],
+            "ブログ": [
+                { name: "note", url: "https://note.com/" },
+                { name: "アカデミアノート", url: "https://www.academianote.site/" }
+            ],
+            "アイコン素材": [
+                { name: "ICOONMONO", url: "https://icooon-mono.com/" },
+                { name: "Icon rainbow", url: "https://icon-rainbow.com/" },
+                { name: "SVG Repo", url: "https://www.svgrepo.com/" },
+                { name: "IFN", url: "https://illustration-free.net/" }
+            ],
+            "イラスト素材": [
+                { name: "ソコスト", url: "https://soco-st.com/" },
+                { name: "Loose Drawing", url: "https://loosedrawing.com/" }
+            ],
+            "写真素材": [
+                { name: "pixabay", url: "https://pixabay.com/ja/" },
+                { name: "Unsplash", url: "https://unsplash.com/ja" },
+                { name: "Cosmic Media", url: "https://cosmicmedia.vercel.app/" }
+            ],
+            "その他素材": [
+                { name: "DOVA-SYNDROME", url: "https://dova-s.jp/" },
+                { name: "Free Mesh Gradient Collection", url: "https://products.ls.graphics/mesh-gradients/" }
+            ],
+            "便利なサイト": [
+                { name: "Cloud LaTeX", url: "https://cloudlatex.io/projects" },
+                { name: "iLovePDF", url: "https://www.ilovepdf.com/ja" },
+                { name: "伝助", url: "https://densuke.biz/event#google_vignette" },
+                { name: "QRのススメ", url: "https://qr.quel.jp/?mode=pc" },
+                { name: "小学校で習う漢字ツール", url: "https://orange-factory.com/tool/kanjicheck.html" }
+            ],
+            "画像編集": [
+                { name: "remove.bg", url: "https://www.remove.bg/ja" },
+                { name: "Image.Upscaler", url: "https://imgupscaler.com/" },
+                { name: "Convertio", url: "https://convertio.co/ja/" },
+                { name: "Vectorizer", url: "https://vectorizer.com/ja/" }
+            ],
+            "AI": [
+                { name: "ChatGPT", url: "https://chatgpt.com/" },
+                { name: "Gemini", url: "https://gemini.google.com/app?hl=ja" },
+                { name: "NotebookLM", url: "https://notebooklm.google.com/?original_referer=https:%2F%2Fwww.google.com%23&pli=1" }
+            ],
+            "論文系AI": [
+                { name: "SCISPACE", url: "https://typeset.io/ja" },
+                { name: "Consensus", url: "https://consensus.app/search/" },
+                { name: "Elicit", url: "https://elicit.com/" },
+                { name: "CONNECTED PAPERS", url: "https://www.connectedpapers.com/" },
+                { name: "Paper interpreter", url: "https://chatgpt.com/g/g-hxDOCBQrs-paper-interpreter-japanese" }
+            ]
+        };
+
+        // サイトデータを取得（ローカルストレージから、または初回はデフォルトデータ）
+        function getSiteData() {
+            try {
+                const stored = localStorage.getItem('linkCollectionData');
+                if (stored) {
+                    return JSON.parse(stored);
+                }
+            } catch (e) {
+                console.error('ローカルストレージからの読み込みエラー:', e);
+            }
+            return JSON.parse(JSON.stringify(defaultSiteData)); // ディープコピー
+        }
+
+        // サイトデータを保存
+        function saveSiteData(data) {
+            try {
+                localStorage.setItem('linkCollectionData', JSON.stringify(data));
+            } catch (e) {
+                console.error('ローカルストレージへの保存エラー:', e);
+                alert('データの保存に失敗しました。ブラウザの設定をご確認ください。');
+            }
+        }
+
+        // 現在のサイトデータ
+        let siteData = getSiteData();
+
+        // カテゴリの表示順序を定義
+        const categoryOrder = [
+            "東京大学", "CAST", "みかん愛好会", "AI", "ECCS", "チコちゃん", 
+            "家庭教師", "論文系AI", "天馬行空", "便利なサイト", "画像編集", 
+            "襖クラブ", "アイコン素材", "イラスト素材", "写真素材", "その他素材", "ブログ"
+        ];
+
+        // カテゴリセクションを生成する関数
+        function generateCategorySections() {
+            const container = document.getElementById('linksContainer');
+            container.innerHTML = '';
+            
+            // 定義された順序でカテゴリを表示
+            categoryOrder.forEach(category => {
+                if (siteData[category]) {
+                    createCategorySection(category, container);
+                }
+            });
+            
+            // 定義されていない新しいカテゴリを最後に追加
+            Object.keys(siteData).forEach(category => {
+                if (!categoryOrder.includes(category)) {
+                    createCategorySection(category, container);
+                }
+            });
+        }
+
+        // カテゴリセクションを作成する関数
+        function createCategorySection(category, container) {
+            const section = document.createElement('div');
+            section.className = `category-section category-${category}`;
+            
+            const header = document.createElement('div');
+            header.className = 'category-header';
+            header.textContent = category;
+            
+            const content = document.createElement('div');
+            content.className = 'category-content';
+            
+            siteData[category].forEach(site => {
+                const link = document.createElement('a');
+                link.href = site.url;
+                link.textContent = site.name;
+                link.className = 'link-item';
+                link.target = '_blank';
+                content.appendChild(link);
+            });
+            
+            section.appendChild(header);
+            section.appendChild(content);
+            container.appendChild(section);
+        }
+
+        // カテゴリセレクトボックスを初期化
+        function initializeCategorySelect() {
+            const select = document.getElementById('category-select');
+            select.innerHTML = '<option value="">選択</option>';
+            Object.keys(siteData).forEach(category => {
+                const option = document.createElement('option');
+                option.value = category;
+                option.textContent = category;
+                select.appendChild(option);
+            });
+        }
+
+        // 新しいサイトを追加する関数
+        function addSite() {
+            const category = document.getElementById('category-select').value;
+            const name = document.getElementById('site-name').value.trim();
+            const url = document.getElementById('site-url').value.trim();
+            
+            if (!category || !name || !url) {
+                alert('すべてのフィールドを入力してください。');
+                return;
+            }
+            
+            if (!siteData[category]) {
+                siteData[category] = [];
+            }
+            
+            siteData[category].push({ name: name, url: url });
+            
+            // データを保存
+            saveSiteData(siteData);
+            
+            // セクションを再生成
+            generateCategorySections();
+            
+            // フォームをクリア
+            document.getElementById('site-name').value = '';
+            document.getElementById('site-url').value = '';
+            document.getElementById('category-select').value = '';
+            
+            alert(`${category}カテゴリに「${name}」を追加しました。`);
+        }
+
+        // 新しいカテゴリを追加する関数
+        function addCategory() {
+            const categoryName = document.getElementById('new-category-name').value.trim();
+            
+            if (!categoryName) {
+                alert('カテゴリ名を入力してください。');
+                return;
+            }
+            
+            if (siteData[categoryName]) {
+                alert('そのカテゴリは既に存在します。');
+                return;
+            }
+            
+            siteData[categoryName] = [];
+            
+            // データを保存
+            saveSiteData(siteData);
+            
+            // セレクトボックスを更新
+            initializeCategorySelect();
+            
+            // セクションを再生成
+            generateCategorySections();
+            
+            // フォームをクリア
+            document.getElementById('new-category-name').value = '';
+            
+            alert(`「${categoryName}」カテゴリを追加しました。`);
+        }
+
+        // データをエクスポートする関数
+        function exportData() {
+            const dataStr = JSON.stringify(siteData, null, 2);
+            const dataBlob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(dataBlob);
+            
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'link-collection-data.json';
+            link.click();
+            
+            URL.revokeObjectURL(url);
+        }
+
+        // データをインポートする関数
+        function importData(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const importedData = JSON.parse(e.target.result);
+                    siteData = importedData;
+                    saveSiteData(siteData);
+                    
+                    generateCategorySections();
+                    initializeCategorySelect();
+                    
+                    alert('データをインポートしました。');
+                } catch (error) {
+                    alert('ファイルの読み込みに失敗しました。正しいJSONファイルを選択してください。');
+                }
+            };
+            reader.readAsText(file);
+            
+            // ファイル選択をリセット
+            event.target.value = '';
+        }
+
+        // データをリセットする関数
+        function resetData() {
+            if (confirm('全てのデータをデフォルトにリセットしますか？この操作は元に戻せません。')) {
+                siteData = JSON.parse(JSON.stringify(defaultSiteData));
+                saveSiteData(siteData);
+                
+                generateCategorySections();
+                initializeCategorySelect();
+                
+                alert('データをリセットしました。');
+            }
+        }
+
+        // ページ読み込み時の初期化
+        window.onload = function() {
+            generateCategorySections();
+            initializeCategorySelect();
+        };
+    </script>
+</body>
+</html>
