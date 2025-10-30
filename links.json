@@ -141,6 +141,14 @@
     {
       "name": "UTokyo試薬",
       "url": "https://u-tokyo.siyaku.com/"
+    },
+    {
+      "name": "UTCIMS",
+      "url": "https://utcims.esc.u-tokyo.ac.jp/secure/um/"
+    },
+    {
+      "name": "SciFinder",
+      "url": "https://scifinder-n.cas.org/"
     }
   ],
   "チコちゃん": [
